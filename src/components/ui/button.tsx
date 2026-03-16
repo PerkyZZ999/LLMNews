@@ -11,7 +11,7 @@ export function Button({ className, variant = 'default', type = 'button', ...pro
     <button
       className={cn(
         'button',
-        variant === 'secondary' && 'button button--secondary',
+        variant === 'secondary' && 'button--secondary',
         className,
       )}
       type={type}

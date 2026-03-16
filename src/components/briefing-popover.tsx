@@ -1,13 +1,9 @@
 import { Popover } from '@base-ui/react/popover'
 
-import { Button } from './ui/button'
-
 export function BriefingPopover() {
   return (
     <Popover.Root>
-      <Popover.Trigger>
-        <Button>Open morning brief</Button>
-      </Popover.Trigger>
+      <Popover.Trigger className="button">Open morning brief</Popover.Trigger>
       <Popover.Portal>
         <Popover.Positioner sideOffset={12}>
           <Popover.Popup className="briefing-popover">
