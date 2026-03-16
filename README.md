@@ -1,6 +1,6 @@
 # LLMNews
 
-LLMNews is the start of a minimalist AI and LLM model news web app built around Bun, TanStack Router, Base UI primitives, shadcn-inspired styling, and Evlog-based observability planning.
+LLMNews is the start of a minimalist AI and LLM model news web app built around Bun, TanStack Router, `@base-ui/react` primitives, shadcn-inspired styling, and Evlog-based observability planning.
 
 ## Docs
 - `/docs/product-overview.md`

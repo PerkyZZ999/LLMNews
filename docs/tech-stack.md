@@ -4,7 +4,7 @@
 - **Bun** for package management and runtime in normal development
 - **TanStack Router** for typed routing and scalable navigation
 - **Evlog** for structured logging around ingestion and publishing events
-- **Base UI primitives** with **shadcn-inspired styling** for a clean, accessible component layer
+- **Base UI primitives** via `@base-ui/react` with **shadcn-inspired styling** for a clean, accessible component layer
 - **Vite + React + TypeScript** for a fast front-end developer experience
 
 ## Initial implementation notes
