@@ -91,6 +91,7 @@ The first version of LLMNews should be a focused, readable web app with a strong
 The MVP should include:
 - A home page with the latest important stories across both launch categories
 - Category views for LLM models and AI coding apps
+- A benchmark leaderboard view for model comparison and technical scanning
 - Article or post pages with structured metadata and source links
 - Clear labeling for release type, vendor, and recency
 - Benchmark callouts when benchmark data exists
@@ -136,6 +137,7 @@ The product should be simple to understand immediately.
 ### Primary routes
 - Home
 - Models
+- Benchmarks
 - AI Coding Apps
 - Post detail pages
 - Admin dashboard routes
@@ -171,7 +173,15 @@ Key admin sections should include:
 - Activity
 
 ## Design direction
-The design should be minimalist, technical, and calm rather than trendy or flashy.
+The design should be minimalist, technical and trendy with some originality, creativity and innovation.
+
+The current visual source of truth for public UI direction is the mockup set in `/docs/design/`.
+
+Reference surfaces:
+- `/docs/design/home_feed/`
+- `/docs/design/article_detail/`
+- `/docs/design/benchmarks_leaderboard/`
+- `/docs/design/tools_directory/`
 
 ### Visual principles
 - Minimalist layout with strong spacing and hierarchy
@@ -187,6 +197,13 @@ The interface should feel:
 - credible
 - editorial
 - slightly technical, but not cold or sterile
+
+The mockups establish additional visual cues that should carry into implementation:
+- dark-first editorial presentation with strong light-theme parity in the shipped product
+- restrained electric-blue accent usage
+- compact information-dense cards, tables, and metadata rows
+- terminal or operational micro-details used sparingly for texture
+- clear distinction between feed views, benchmark data views, and deeper article layouts
 
 ### What to avoid
 - Generic startup gradients everywhere

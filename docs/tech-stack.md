@@ -283,12 +283,15 @@ These concepts should shape both route design and server-side logic.
 ## UX requirements
 The stack must support two distinct but related interfaces.
 
+The implementation should use `/docs/design/` as the current UI reference set for layout direction, component density, and visual hierarchy.
+
 ### Public interface
 - minimalist
 - AI and tech editorial feel
 - fast scanning
 - clean typography
 - dark and light mode support
+- support for a feed view, article detail view, benchmark leaderboard view, and AI tools directory view
 
 ### Admin interface
 - information-dense without being cluttered

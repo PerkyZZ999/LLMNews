@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LLMNews Tools Directory - AI Coding Tools</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#1349ec',
+              dark: '#0f39b8',
+              light: '#426ef2',
+            },
+            dark: {
+              900: '#0a0a0a',
+              800: '#171717',
+              700: '#262626',
+              600: '#404040',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-layout">
+    body {
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+    }
+    .tool-card:hover {
+      border-color: #1349ec;
+      transform: translateY(-2px);
+      transition: all 0.2s ease-in-out;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+<!-- BEGIN: MainHeader -->
+<header class="border-b border-dark-700 bg-dark-900 sticky top-0 z-50" data-purpose="global-header">
+<div class="max-row mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-custom flex items-center justify-center">
+<span class="text-white font-bold text-lg">L</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight text-white">LLMNews <span class="text-primary">Tools</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-gray-400 hover:text-white transition-colors" href="#">Directory</a>
+<a class="text-sm font-medium text-gray-400 hover:text-white transition-colors" href="#">Updates</a>
+<a class="text-sm font-medium text-gray-400 hover:text-white transition-colors" href="#">Submit Tool</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-custom text-sm font-semibold transition-colors">
+          Subscribe
+        </button>
+</div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: HeroSection -->
+<section class="py-12 bg-gradient-to-b from-dark-800 to-dark-900 border-b border-dark-700" data-purpose="hero-banner">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">AI Coding Tools Directory</h2>
+<p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        A curated list of high-signal, low-friction AI tools for modern software development. Updated weekly with the latest features and versions.
+      </p>
+<!-- Quick Search / Filter Bar -->
+<div class="mt-8 max-w-xl mx-auto relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-dark-700 rounded-custom leading-5 bg-dark-800 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm" placeholder="Search tools (e.g. Cursor, Aider...)" type="text"/>
+</div>
+</div>
+</section>
+<!-- END: HeroSection -->
+<!-- BEGIN: ToolsGrid -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-purpose="main-directory-content">
+<!-- Filter Tabs -->
+<div class="flex items-center gap-4 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-primary text-white text-sm font-medium">All Tools</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-dark-800 text-gray-400 hover:text-white text-sm font-medium">IDEs</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-dark-800 text-gray-400 hover:text-white text-sm font-medium">CLI Agents</button>
+<button class="whitespace-nowrap px-4 py-1.5 rounded-full bg-dark-800 text-gray-400 hover:text-white text-sm font-medium">Extensions</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- TOOL: Cursor -->
+<article class="tool-card p-6 bg-dark-800 border border-dark-700 rounded-custom flex flex-col h-full" data-purpose="tool-item">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-white/5 rounded-custom flex items-center justify-center border border-dark-600">
+<img alt="Cursor Logo" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3SoEfbz83D0N7tTDrRmFvzoRe3RExBovycKrRzn_UoKHfA-2-xDPsZxI92t5lkUh5gaeEvnSOSdY8OUsQMgQO8ZeabcoLKY5vtFciZsvpmmmVFWQ3v6KjyZhcNfSjH5Sb0FxgUa9pxtYPM207QUmDG2551RuZrv4cc8DUoS1F_2RPZV6m2VLKlY57UcJEbnTRMk_cmArOc74VtLv4s_dFn4-y7YMr3NCyhCDo9jAQROs3VODk4mUVEOx1lE3rDSuhBvtvkxTXItM"/>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Cursor</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-900/30 text-green-400">Stable v0.42</span>
+</div>
+</div>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<p class="text-sm text-gray-400 mb-6 flex-grow">
+          The AI-first code editor. A fork of VS Code designed for optimal pair-programming with LLMs.
+        </p>
+<div class="space-y-3 mb-6" data-purpose="tool-features">
+<h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Latest Features</h4>
+<ul class="text-sm space-y-2">
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Composer Mode for multi-file edits</span>
+</li>
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Predictive code navigation (Tab)</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-dark-700 flex justify-between items-center">
+<span class="text-xs text-gray-500">Updated 2 days ago</span>
+<button class="text-sm font-medium text-primary hover:text-primary-light">Details →</button>
+</div>
+</article>
+<!-- TOOL: Windsurf -->
+<article class="tool-card p-6 bg-dark-800 border border-dark-700 rounded-custom flex flex-col h-full" data-purpose="tool-item">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-white/5 rounded-custom flex items-center justify-center border border-dark-600">
+<img alt="Windsurf Logo" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEg7R9l4yCk7Bjx4QFZ01DdWMTXu54DyYp4yOXxvot_aB4OllM-rkzpgGOKuRVABMd1uJ4p0kUWZ5bHjVJ0D85HyJvdsN6pBcIy9zMSNjJVcqs-lPFz5PJFk_NS34EN1QzTiv34DIbcNtUFcvfnTQbl7WAN9iLd4wwDq4b6iodDnFV83z2hl4Q8rp7IqygWIW2o1oVAWAEZYVxJJUEcIxwwkTKGmx6kgrWM9E9OE1oNukcDxO8KeMu0rL6PaptXuodxIZc3JF6ZvE"/>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Windsurf</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-900/30 text-blue-400">Beta v1.0</span>
+</div>
+</div>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<p class="text-sm text-gray-400 mb-6 flex-grow">
+          The world's first agentic IDE by Codeium. Deeply integrated context and flow.
+        </p>
+<div class="space-y-3 mb-6" data-purpose="tool-features">
+<h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Latest Features</h4>
+<ul class="text-sm space-y-2">
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Flow context awareness</span>
+</li>
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Advanced reasoning capabilities</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-dark-700 flex justify-between items-center">
+<span class="text-xs text-gray-500">Updated 5 days ago</span>
+<button class="text-sm font-medium text-primary hover:text-primary-light">Details →</button>
+</div>
+</article>
+<!-- TOOL: Aider -->
+<article class="tool-card p-6 bg-dark-800 border border-dark-700 rounded-custom flex flex-col h-full" data-purpose="tool-item">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-white/5 rounded-custom flex items-center justify-center border border-dark-600">
+<img alt="Aider Logo" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbrvORYBIL0f2fAWGuFJNb8nSsgT9oKpXpSQ20iuPmhKjt27VrEXXkh8AXYRmzRNUoZbGsKhqavOnOgHoB0yIK0ymjEoa-ku0L_OZA_6NbLy_M-NiCxSNLQUBKsLjYvYM6EN4bsj4DmdCWFQ400aYz8hXpVEUsAVfsImuOlkQgWXBZ4gR-pBUrW-_IGJL_K804_b447CuaH3taXqrFi9vF0IwVnlnUOAdmuGODc2DI7Qz__aWX0uzk8K1mUcwXvNqLlZPW3h54VZ4"/>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">Aider</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-700/50 text-gray-300">v0.64.1</span>
+</div>
+</div>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<p class="text-sm text-gray-400 mb-6 flex-grow">
+          Command-line AI pair programmer. Lets you edit code in your local git repo with LLMs.
+        </p>
+<div class="space-y-3 mb-6" data-purpose="tool-features">
+<h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Latest Features</h4>
+<ul class="text-sm space-y-2">
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Architect mode for planning</span>
+</li>
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Universal model support (Claude 3.5 Sonnet)</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-dark-700 flex justify-between items-center">
+<span class="text-xs text-gray-500">Updated 1 day ago</span>
+<button class="text-sm font-medium text-primary hover:text-primary-light">Details →</button>
+</div>
+</article>
+<!-- TOOL: v0.dev -->
+<article class="tool-card p-6 bg-dark-800 border border-dark-700 rounded-custom flex flex-col h-full" data-purpose="tool-item">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 bg-white/5 rounded-custom flex items-center justify-center border border-dark-600">
+<img alt="v0 Logo" class="w-8 h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVTl3psc4QtGIJrahlB1eOQ9HS32EEnyFZjj2ByxMwGYPFx2-PTcN3sledTD-0zmUGgPMW7IGrMsqgF3TtzG6Z3d0PJbte9FXJpxe8InJqU-EAZJuk70Artl8dAR7XqUJNoVMAG9W_0N9CwXA_GzG6gRfe4-bWSS55J6795L147SH653SMoMjDQ1RAr4vAE0-V5dxQufilWOiUJvyVzbpOimgvDF2JAUaUBFTE3jTet7r4Q-gf0WgHD-Jxa6F9PMnZ_aSRfreO0MI"/>
+</div>
+<div>
+<h3 class="text-white font-bold text-lg">v0.dev</h3>
+<span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-purple-900/30 text-purple-400">Stable</span>
+</div>
+</div>
+<a class="text-gray-500 hover:text-primary transition-colors" href="#">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<p class="text-sm text-gray-400 mb-6 flex-grow">
+          Generative UI by Vercel. Create beautiful React/Tailwind components from a simple prompt.
+        </p>
+<div class="space-y-3 mb-6" data-purpose="tool-features">
+<h4 class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Latest Features</h4>
+<ul class="text-sm space-y-2">
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Canvas editing support</span>
+</li>
+<li class="flex items-start gap-2 text-gray-300">
+<span class="text-primary mt-1">•</span>
+<span>Project-wide styling awareness</span>
+</li>
+</ul>
+</div>
+<div class="pt-4 border-t border-dark-700 flex justify-between items-center">
+<span class="text-xs text-gray-500">Updated 4 days ago</span>
+<button class="text-sm font-medium text-primary hover:text-primary-light">Details →</button>
+</div>
+</article>
+</div>
+</main>
+<!-- END: ToolsGrid -->
+<!-- BEGIN: MainFooter -->
+<footer class="mt-20 border-t border-dark-700 py-12 bg-dark-900" data-purpose="global-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="text-gray-500 text-sm">
+          © 2024 LLMNews. All rights reserved. Part of the AI Coding ecosystem.
+        </div>
+<div class="flex gap-6">
+<a class="text-gray-500 hover:text-white transition-colors text-sm" href="#">Twitter</a>
+<a class="text-gray-500 hover:text-white transition-colors text-sm" href="#">GitHub</a>
+<a class="text-gray-500 hover:text-white transition-colors text-sm" href="#">Newsletter</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+</body></html>

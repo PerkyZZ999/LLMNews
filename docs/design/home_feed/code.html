@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LLMNews | High-Signal AI Intelligence</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1349ec',
+            surface: {
+              50: '#1a1a1a',
+              100: '#262626',
+              200: '#333333',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="base-styling">
+    body {
+      background-color: #0a0a0a;
+      color: #e5e5e5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .feed-item:hover {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+    /* Simple custom scrollbar for technical feel */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0a0a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="font-sans">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 border-b border-neutral-800 bg-black/80 backdrop-blur-md" data-purpose="global-navigation">
+<div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+<!-- Minimalist Branding -->
+<div class="flex items-center gap-2">
+<div class="w-2 h-6 bg-primary rounded-sm"></div>
+<span class="text-lg font-bold tracking-tight text-white uppercase">LLM<span class="text-primary">News</span></span>
+</div>
+<!-- Simple Navigation -->
+<nav class="flex gap-8 text-sm font-medium text-neutral-400">
+<a class="hover:text-primary transition-colors text-white" href="#">News</a>
+<a class="hover:text-primary transition-colors" href="#">Benchmarks</a>
+<a class="hover:text-primary transition-colors" href="#">Tools</a>
+</nav>
+<!-- Terminal Status (Visual Decorative) -->
+<div class="hidden sm:flex items-center gap-2 text-[10px] font-mono text-neutral-500">
+<span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        LIVE_FEED_SYNCED
+      </div>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: MainContent -->
+<main class="max-w-4xl mx-auto px-4 py-8">
+<!-- Feed Filter/Header -->
+<div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4" data-purpose="feed-controls">
+<div>
+<h1 class="text-2xl font-bold text-white mb-1">Latest Releases</h1>
+<p class="text-neutral-500 text-sm">Aggregated real-time intelligence for the LLM ecosystem.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-medium bg-primary text-white rounded-custom">All</button>
+<button class="px-3 py-1 text-xs font-medium bg-surface-100 text-neutral-400 rounded-custom border border-neutral-700 hover:border-neutral-500">Models</button>
+<button class="px-3 py-1 text-xs font-medium bg-surface-100 text-neutral-400 rounded-custom border border-neutral-700 hover:border-neutral-500">Research</button>
+</div>
+</div>
+<!-- BEGIN: NewsFeedList -->
+<section class="space-y-1" data-purpose="news-feed">
+<!-- Feed Entry 1 -->
+<article class="feed-item p-4 rounded-custom transition-all group flex items-start gap-4 border border-transparent hover:border-neutral-800">
+<div class="flex-none pt-1">
+<span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">14:20</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 text-[10px] font-bold rounded bg-primary/10 text-primary border border-primary/20 uppercase tracking-wider">OpenAI</span>
+<span class="text-xs text-neutral-600">v0.12.4</span>
+</div>
+<h2 class="text-lg font-medium text-neutral-200 leading-snug group-hover:text-white">
+            GPT-4o-mini released with significant latency reductions for RAG pipelines
+          </h2>
+</div>
+<div class="flex-none self-center">
+<svg class="h-4 w-4 text-neutral-600 group-hover:text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</article>
+<!-- Feed Entry 2 -->
+<article class="feed-item p-4 rounded-custom transition-all group flex items-start gap-4 border border-transparent hover:border-neutral-800">
+<div class="flex-none pt-1">
+<span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">12:05</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 text-[10px] font-bold rounded bg-neutral-800 text-neutral-400 border border-neutral-700 uppercase tracking-wider">Anthropic</span>
+</div>
+<h2 class="text-lg font-medium text-neutral-200 leading-snug group-hover:text-white">
+            Claude 3.5 Sonnet context window expanded to 200k tokens for tier-1 API users
+          </h2>
+</div>
+<div class="flex-none self-center">
+<svg class="h-4 w-4 text-neutral-600 group-hover:text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</article>
+<!-- Feed Entry 3 -->
+<article class="feed-item p-4 rounded-custom transition-all group flex items-start gap-4 border border-transparent hover:border-neutral-800">
+<div class="flex-none pt-1">
+<span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">09:45</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 text-[10px] font-bold rounded bg-neutral-800 text-neutral-400 border border-neutral-700 uppercase tracking-wider">Meta</span>
+</div>
+<h2 class="text-lg font-medium text-neutral-200 leading-snug group-hover:text-white">
+            Llama-3-405B quantization techniques reach 4-bit stability without perplexity loss
+          </h2>
+</div>
+<div class="flex-none self-center">
+<svg class="h-4 w-4 text-neutral-600 group-hover:text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</article>
+<!-- Feed Entry 4 -->
+<article class="feed-item p-4 rounded-custom transition-all group flex items-start gap-4 border border-transparent hover:border-neutral-800">
+<div class="flex-none pt-1">
+<span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Yesterday</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 text-[10px] font-bold rounded bg-neutral-800 text-neutral-400 border border-neutral-700 uppercase tracking-wider">Mistral</span>
+</div>
+<h2 class="text-lg font-medium text-neutral-200 leading-snug group-hover:text-white">
+            Mistral Large 2 API pricing restructured to compete with mid-tier models
+          </h2>
+</div>
+<div class="flex-none self-center">
+<svg class="h-4 w-4 text-neutral-600 group-hover:text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</article>
+<!-- Feed Entry 5 -->
+<article class="feed-item p-4 rounded-custom transition-all group flex items-start gap-4 border border-transparent hover:border-neutral-800">
+<div class="flex-none pt-1">
+<span class="text-[10px] font-mono text-neutral-500 uppercase tracking-widest">Yesterday</span>
+</div>
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2 py-0.5 text-[10px] font-bold rounded bg-neutral-800 text-neutral-400 border border-neutral-700 uppercase tracking-wider">DeepSeek</span>
+</div>
+<h2 class="text-lg font-medium text-neutral-200 leading-snug group-hover:text-white">
+            DeepSeek-Coder-V2 now leads open-weights benchmarks for Python and Go
+          </h2>
+</div>
+<div class="flex-none self-center">
+<svg class="h-4 w-4 text-neutral-600 group-hover:text-primary" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</article>
+</section>
+<!-- END: NewsFeedList -->
+<!-- Load More -->
+<div class="mt-12 text-center">
+<button class="px-6 py-2 text-sm font-medium border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-600 rounded-custom transition-all">
+        Fetch Older Updates
+      </button>
+</div>
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: Footer -->
+<footer class="border-t border-neutral-900 mt-20 py-12 bg-black">
+<div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-neutral-600 text-xs font-mono">
+        © 2024 LLMNEWS_CORE_V1.0
+      </div>
+<div class="flex gap-6 text-xs text-neutral-500">
+<a class="hover:text-neutral-300" href="#">RSS Feed</a>
+<a class="hover:text-neutral-300" href="#">API Documentation</a>
+<a class="hover:text-neutral-300" href="#">Privacy Policy</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-1 w-24 bg-neutral-900 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<span class="text-[10px] text-neutral-600 font-mono italic">LOAD_AVG: 0.24</span>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>

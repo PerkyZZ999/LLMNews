@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: hsl(220 23% 98%);
+  --foreground: hsl(220 20% 12%);
+  --card: hsl(220 26% 100%);
+  --card-foreground: hsl(220 20% 12%);
+  --popover: hsl(220 26% 100%);
+  --popover-foreground: hsl(220 20% 12%);
+  --primary: hsl(223 84% 50%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(220 19% 92%);
+  --secondary-foreground: hsl(220 22% 18%);
+  --muted: hsl(220 16% 94%);
+  --muted-foreground: hsl(220 12% 42%);
+  --accent: hsl(223 84% 50%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 79% 58%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(220 18% 86%);
+  --input: hsl(220 18% 86%);
+  --ring: hsl(223 84% 50%);
+  --chart-1: hsl(223 84% 50%);
+  --chart-2: hsl(192 82% 40%);
+  --chart-3: hsl(260 75% 58%);
+  --chart-4: hsl(38 92% 55%);
+  --chart-5: hsl(150 56% 42%);
+  --radius: 1rem;
+  --surface-0: hsl(220 23% 98%);
+  --surface-1: hsl(220 26% 100%);
+  --surface-2: hsl(220 22% 96%);
+  --surface-3: hsl(220 18% 92%);
+  --line: hsl(220 18% 86%);
+  --shadow-color: hsl(223 84% 50% / 0.16);
+}
+
+.dark {
+  --background: hsl(0 0% 4%);
+  --foreground: hsl(210 20% 92%);
+  --card: hsl(0 0% 9%);
+  --card-foreground: hsl(210 20% 92%);
+  --popover: hsl(0 0% 9%);
+  --popover-foreground: hsl(210 20% 92%);
+  --primary: hsl(223 84% 50%);
+  --primary-foreground: hsl(210 40% 98%);
+  --secondary: hsl(0 0% 12%);
+  --secondary-foreground: hsl(210 20% 92%);
+  --muted: hsl(0 0% 14%);
+  --muted-foreground: hsl(215 12% 70%);
+  --accent: hsl(223 84% 50%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 63% 42%);
+  --destructive-foreground: hsl(210 40% 98%);
+  --border: hsl(0 0% 18%);
+  --input: hsl(0 0% 18%);
+  --ring: hsl(223 84% 50%);
+  --chart-1: hsl(223 84% 50%);
+  --chart-2: hsl(192 82% 40%);
+  --chart-3: hsl(260 75% 58%);
+  --chart-4: hsl(38 92% 55%);
+  --chart-5: hsl(150 56% 42%);
+  --surface-0: hsl(0 0% 4%);
+  --surface-1: hsl(0 0% 9%);
+  --surface-2: hsl(0 0% 12%);
+  --surface-3: hsl(0 0% 18%);
+  --line: hsl(0 0% 18%);
+  --shadow-color: hsl(223 84% 50% / 0.22);
+}
+
+@theme inline {
+  --font-sans: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-surface-0: var(--surface-0);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --radius-sm: calc(var(--radius) - 0.5rem);
+  --radius-md: calc(var(--radius) - 0.25rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top left, hsl(223 84% 50% / 0.12), transparent 28%),
+      radial-gradient(circle at top right, hsl(192 82% 40% / 0.08), transparent 22%),
+      linear-gradient(180deg, var(--surface-0), var(--background));
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background-color: hsl(223 84% 50% / 0.22);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@utility page-shell {
+  margin-inline: auto;
+  width: min(100%, 80rem);
+  padding-inline: 1.25rem;
+}
+
+@utility technical-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@utility surface-panel {
+  border: 1px solid var(--line);
+  background-color: color-mix(in srgb, var(--surface-1) 88%, transparent);
+  box-shadow: 0 1.5rem 3rem -2rem var(--shadow-color);
+  backdrop-filter: blur(20px);
+}

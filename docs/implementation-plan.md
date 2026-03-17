@@ -1,5 +1,18 @@
 # LLMNews Implementation Plan
 
+## Detailed planning set
+This file is the top-level roadmap. The detailed execution plans live in:
+- `/docs/implementation/README.md`
+- `/docs/implementation/backlog.md`
+- `/docs/design/README.md`
+- `/docs/implementation/phase-01-foundation.md`
+- `/docs/implementation/phase-02-public-experience.md`
+- `/docs/implementation/phase-03-admin-dashboard.md`
+- `/docs/implementation/phase-04-editorial-workflows.md`
+- `/docs/implementation/phase-05-ingestion-observability.md`
+- `/docs/implementation/phase-06-launch-readiness.md`
+- `/docs/implementation/workstreams.md`
+
 ## Planning goal
 This plan defines how LLMNews should move from product documentation to a working editorial web application with two primary surfaces:
 - a public news experience
@@ -35,6 +48,7 @@ This phase creates the core project structure for both the public app and the ad
 - configure Bun scripts and Biome
 - establish Base UI-backed shadcn components
 - set up shared route, query, theme, and layout foundations
+- translate the mockup design language in `/docs/design/` into reusable application tokens and primitives
 
 ### Expected work
 - set up TanStack Start
@@ -68,12 +82,14 @@ This phase builds the first usable version of the public product.
 ### Planned public routes
 - `/`
 - `/models`
+- `/benchmarks`
 - `/ai-coding-apps`
 - `/posts/$slug`
 
 ### Public deliverables
 - home page
 - category pages
+- benchmark leaderboard page
 - post detail pages
 - featured stories section
 - latest news feed
@@ -85,6 +101,13 @@ This phase builds the first usable version of the public product.
 - structured story cards with metadata
 - source link sections
 - clear release-type labeling
+
+### Design implementation note
+The public-facing MVP should follow the mockup reference set in `/docs/design/`, especially for:
+- home feed density and hierarchy
+- article detail structure
+- benchmark leaderboard presentation
+- tools-directory layout language for the AI coding apps surface
 
 ### Exit criteria
 - readers can browse the product comfortably on desktop and mobile

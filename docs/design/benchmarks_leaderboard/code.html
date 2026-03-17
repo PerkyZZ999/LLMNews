@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LLMNews Benchmarks | Model Performance Leaderboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#1349ec',
+              dark: '#0e36b3',
+              light: '#4b74f1'
+            },
+            dark: {
+              900: '#0a0a0c',
+              800: '#121216',
+              700: '#1e1e24',
+              600: '#2a2a32'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-utilities">
+    body {
+      background-color: #0a0a0c;
+      color: #e2e8f0;
+      font-family: 'Inter', sans-serif;
+    }
+    .glass-panel {
+      background: rgba(18, 18, 22, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .table-row-hover:hover {
+      background-color: rgba(19, 73, 236, 0.05);
+    }
+    .score-bar {
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+    .score-fill {
+      height: 100%;
+      background: #1349ec;
+      transition: width 1s ease-out;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<!-- BEGIN: Navigation -->
+<nav class="sticky top-0 z-50 glass-panel border-b border-white/10" data-purpose="main-nav">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 bg-primary rounded-custom flex items-center justify-center">
+<span class="text-white font-bold text-xs">LN</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-white">LLMNews <span class="text-primary">Benchmarks</span></span>
+</div>
+<div class="hidden md:block">
+<div class="flex items-baseline space-x-8">
+<a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" href="#">Daily News</a>
+<a class="text-primary px-3 py-2 text-sm font-medium" href="#">Leaderboard</a>
+<a class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" href="#">Methodology</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- END: Navigation -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<!-- BEGIN: Header Section -->
+<header class="mb-10" data-purpose="page-intro">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="text-4xl font-bold text-white mb-2">Model Performance Leaderboard</h1>
+<p class="text-gray-400 max-w-2xl text-lg">
+            Aggregated technical scores for Large Language Models across standardized benchmarks. Data updated weekly.
+          </p>
+</div>
+<div class="flex gap-3">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-400 border border-green-500/20">
+<span class="w-2 h-2 mr-2 rounded-full bg-green-400 animate-pulse"></span>
+            Last Update: Oct 24, 2023
+          </span>
+</div>
+</div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Filter Controls -->
+<section class="mb-8 p-6 glass-panel rounded-custom" data-purpose="table-filters">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<!-- Search -->
+<div class="md:col-span-1">
+<label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" for="search">Search Models</label>
+<input class="w-full bg-dark-700 border-white/10 rounded-custom text-sm focus:ring-primary focus:border-primary text-white" id="search" placeholder="e.g. GPT-4, Claude..." type="text"/>
+</div>
+<!-- Filter by Provider -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Provider</label>
+<select class="w-full bg-dark-700 border-white/10 rounded-custom text-sm focus:ring-primary focus:border-primary text-white">
+<option>All Providers</option>
+<option>OpenAI</option>
+<option>Anthropic</option>
+<option>Google</option>
+<option>Meta</option>
+<option>Mistral</option>
+</select>
+</div>
+<!-- Filter by Size -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Model Class</label>
+<select class="w-full bg-dark-700 border-white/10 rounded-custom text-sm focus:ring-primary focus:border-primary text-white">
+<option>All Sizes</option>
+<option>Large (Proprietary)</option>
+<option>70B+</option>
+<option>30B - 69B</option>
+<option>Under 30B</option>
+</select>
+</div>
+<!-- Sort By -->
+<div>
+<label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2">Sort By</label>
+<select class="w-full bg-dark-700 border-white/10 rounded-custom text-sm focus:ring-primary focus:border-primary text-white">
+<option>Avg Score (Desc)</option>
+<option>MMLU</option>
+<option>GSM8K</option>
+<option>HumanEval</option>
+</select>
+</div>
+</div>
+</section>
+<!-- END: Filter Controls -->
+<!-- BEGIN: Benchmarks Table -->
+<section class="overflow-x-auto glass-panel rounded-custom border border-white/10" data-purpose="leaderboard-data">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-white/10 bg-white/5">
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-400">Rank</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-400">Model Name</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-400">Provider</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-400">MMLU</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-400">GSM8K</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-400">HumanEval</th>
+<th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-gray-400 text-right">Avg Score</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<!-- Model Row 1 -->
+<tr class="table-row-hover transition-colors">
+<td class="px-6 py-5 text-sm font-bold text-primary">#1</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-white font-semibold">GPT-4o</span>
+<span class="text-[10px] text-gray-500 font-mono">2024-05-13</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-gray-300">OpenAI</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">88.7</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 88.7%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">92.0</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 92%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">90.2</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 90.2%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-bold text-white">90.3</td>
+</tr>
+<!-- Model Row 2 -->
+<tr class="table-row-hover transition-colors">
+<td class="px-6 py-5 text-sm font-bold text-gray-400">#2</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-white font-semibold">Claude 3.5 Sonnet</span>
+<span class="text-[10px] text-gray-500 font-mono">v2</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-gray-300">Anthropic</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">88.3</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 88.3%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">91.6</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 91.6%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">92.0</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 92%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-bold text-white">90.6</td>
+</tr>
+<!-- Model Row 3 -->
+<tr class="table-row-hover transition-colors">
+<td class="px-6 py-5 text-sm font-bold text-gray-400">#3</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-white font-semibold">Gemini 1.5 Pro</span>
+<span class="text-[10px] text-gray-500 font-mono">Ultra</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-gray-300">Google</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">85.9</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 85.9%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">86.5</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 86.5%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">84.1</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 84.1%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-bold text-white">85.5</td>
+</tr>
+<!-- Model Row 4 -->
+<tr class="table-row-hover transition-colors">
+<td class="px-6 py-5 text-sm font-bold text-gray-400">#4</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-white font-semibold">Llama 3.1 405B</span>
+<span class="text-[10px] text-gray-500 font-mono">Instruct</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-gray-300">Meta</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">85.2</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 85.2%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">89.1</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 89.1%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">80.5</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 80.5%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-bold text-white">84.9</td>
+</tr>
+<!-- Model Row 5 -->
+<tr class="table-row-hover transition-colors">
+<td class="px-6 py-5 text-sm font-bold text-gray-400">#5</td>
+<td class="px-6 py-5">
+<div class="flex flex-col">
+<span class="text-white font-semibold">Mistral Large 2</span>
+<span class="text-[10px] text-gray-500 font-mono">123B</span>
+</div>
+</td>
+<td class="px-6 py-5 text-sm text-gray-300">Mistral AI</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">84.0</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 84.0%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">82.2</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 82.2%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5">
+<div class="flex flex-col gap-1">
+<span class="text-sm font-medium">76.8</span>
+<div class="score-bar w-24"><div class="score-fill" style="width: 76.8%;"></div></div>
+</div>
+</td>
+<td class="px-6 py-5 text-right font-bold text-white">81.0</td>
+</tr>
+</tbody>
+</table>
+</section>
+<!-- END: Benchmarks Table -->
+<!-- BEGIN: Footer Info -->
+<footer class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 pb-20 border-t border-white/5 pt-10" data-purpose="technical-details">
+<div>
+<h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4">MMLU</h3>
+<p class="text-xs text-gray-400 leading-relaxed">
+          Massive Multitask Language Understanding. A benchmark designed to measure knowledge acquired during pretraining by evaluating models across 57 subjects across STEM, the humanities, the social sciences, and more.
+        </p>
+</div>
+<div>
+<h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4">GSM8K</h3>
+<p class="text-xs text-gray-400 leading-relaxed">
+          Grade School Math 8K. High-quality grade school math word problems. It tests the model's ability to perform multi-step mathematical reasoning.
+        </p>
+</div>
+<div>
+<h3 class="text-sm font-bold text-white uppercase tracking-widest mb-4">HumanEval</h3>
+<p class="text-xs text-gray-400 leading-relaxed">
+          Released by OpenAI, this dataset measures functional correctness for synthesizing programs from docstrings. It solves problems in Python.
+        </p>
+</div>
+</footer>
+<!-- END: Footer Info -->
+</main>
+<script data-purpose="sorting-logic">
+    // Simplified demonstration of sorting logic interface
+    document.querySelectorAll('select').forEach(dropdown => {
+      dropdown.addEventListener('change', (e) => {
+        console.log(`Filtering/Sorting triggered: ${e.target.value}`);
+        // In a real application, this would trigger a re-render of the table rows
+      });
+    });
+  </script>
+</body></html>

@@ -16,6 +16,8 @@ The application is planned with two main surfaces:
 - `/docs/product-overview.md` defines the product, audience, editorial scope, MVP, and design direction.
 - `/docs/tech-stack.md` defines the approved engineering stack and implementation constraints.
 - `/docs/implementation-plan.md` breaks the project into delivery phases with concrete milestones.
+- `/docs/implementation/` contains the detailed end-to-end execution plans and workstreams.
+- `/docs/design/` contains the mockup reference screens and HTML prototypes for the public UI direction.
 
 ## Planned stack
 - Bun for package management, runtime, scripts, and tests
